@@ -5,14 +5,27 @@ This project uses American Community Survey (ACS) Public Use Microdata Sample (P
 
 ## Notebook
 - Main notebook: Housing_Affordability.ipynb
-
+  
 ## Data Sources
 - ACS PUMS 2023 1-year housing files:
-  - `psam_husa.csv`
-  - `psam_husb.csv`
+  - National housing ZIP: [`csv_hus.zip`](https://www2.census.gov/programs-surveys/acs/data/pums/2023/1-Year/csv_hus.zip)
+  - Census directory: [2023 ACS PUMS 1-Year Files](https://www2.census.gov/programs-surveys/acs/data/pums/2023/1-Year/)
+  - After extraction, the notebook uses:
+    - `psam_husa.csv`
+    - `psam_husb.csv`
 - Census TIGER/Line 2023 PUMA shapefiles:
-  - extracted state shapefiles in 
- 
+  - Census directory: [2023 TIGER/Line PUMA shapefiles](https://www2.census.gov/geo/tiger/TIGER2023/PUMA/)
+  - Download the state ZIP files named like `tl_2023_06_puma20.zip` and extract them
+
+## Quick Download Option
+- Script: [scripts/download_housing_data.sh]
+- Example usage:
+  - `bash scripts/download_housing_data.sh`
+  - or `bash scripts/download_housing_data.sh /path/to/data_dir`
+- The script downloads:
+  - the ACS 2023 1-year housing ZIP
+  - 2023 TIGER/Line PUMA shapefiles for all 50 states plus DC
+- After running it, update the notebook paths if your data lives somewhere other than the default locations used in the notebook.
 
 ## What the Notebook Does
 1. Loads and combines ACS housing microdata.
